@@ -86,7 +86,8 @@ section {
   background-color: #242424;
 }
 
-.link__hover-effect:hover {
+.link__hover-effect:hover::after {
+  content: "";
   left: 0;
   width: 100%;
 }
@@ -375,6 +376,7 @@ footer {
 
 .footer__logo--img {
   width: 70px;
+  margin-bottom: 28px;
 }
 
 .footer__social--list {
@@ -382,7 +384,7 @@ footer {
   max-width: 500px;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 28px 0;
+  margin-bottom: 28px;
 }
 
 .footer__social--link,
