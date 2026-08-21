@@ -9,6 +9,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <script src="script.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "mIVT8hUKjsQjxDh8l",
+          });
+      })();
+    </script>
   </head>
   <body>
     <section id="landing-page">
@@ -73,36 +84,37 @@
           </div>
         </div>
       </header>
-      <button class="mail__btn click">
+      <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-regular fa-envelope"></i>
       </button>
       <a href="#project" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
       <div class="modal">
-        <div class="modal__half modal__about"></div>
+        <div class="modal__half modal__about">
         <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
         <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
         <p class="modal__para">
           I'm a 25 year old American <b class="orange">Frontend Software enginner</b> with a strong passion for developing websites with great <b class="orange">user experiences.</b> <br> I current work on extremely difficult engineering problems and learn from a team consisting of some of the most <b class="orange">talented</b> and <b class="orange">experienced</b> software engineers every day.
         </p>
-        <div class="modal__languages">
-          <figure class="modal__language">
-            <img class="modal__language--img" src="./assets/triangle.svg" alt="">
-            <span class="language__name">HTML</span>
-          </figure>
-          <figure class="modal__language">
-            <img class="modal__language--img" src="./assets/triangle.svg" alt="">
-            <span class="language__name">CSS</span>
-          </figure>
-          <figure class="modal__language">
-            <img class="modal__language--img" src="./assets/triangle.svg" alt="">
-            <span class="language__name">JavaScript</span>
-          </figure>
-          <figure class="modal__language">
-            <img class="modal__language--img" src="./assets/triangle.svg" alt="">
-            <span class="language__name">React</span>
-          </figure>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/triangle.svg" alt="">
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/triangle.svg" alt="">
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/triangle.svg" alt="">
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/triangle.svg" alt="">
+              <span class="language__name">React</span>
+            </figure>
+          </div>
         </div>
         <div class="modal__half modal__contact">
           <h3 class="modal__title modal__title--contact">
@@ -111,14 +123,14 @@
           <h4 class="modal__sub-title modal__sub-title--contact">
             I'm currently open for new opportunities, and I would love to hear from you!
           </h4>
-          <form id="contact__form" action="">
+          <form id="contact__form" onsubmit="contact(event)">
             <div class="form__item">
               <label class="form__item--label">Name</label>
-              <input class="input" name="user__name" type="text" required></input>
+              <input class="input" name="user_name" type="text" required></input>
             </div>
             <div class="form__item">
               <label class="form__item--label">Email</label>
-              <input class="input" name="user__email" type="email" required></input>
+              <input class="input" name="user_email" type="email" required></input>
             </div>
             <div class="form__item">
               <label class="form__item--label">Message</label>
@@ -133,6 +145,7 @@
             Thanks for the message! Looking forward to connecting with you soon!
           </div>
         </div>
+        <i class="fas fa-times modal__exit click"></i>
       </div>
     </section>
     <section id="projects">
